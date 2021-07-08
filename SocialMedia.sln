@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialMedia.Core", "SocialM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialMedia.Infrastructure", "SocialMedia.Infrastructure\SocialMedia.Infrastructure.csproj", "{BAF736AB-218D-4E97-A219-4171565DAFB5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A3D1A3E2-B63A-4BC0-96A9-865D8F413474}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialMedia.UnitTests", "SocialMedia.UnitTests\SocialMedia.UnitTests.csproj", "{7F3FD68C-E932-436A-825C-7CBD54209AB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialMedia.IntegrationTests", "SocialMedia.IntegrationTests\SocialMedia.IntegrationTests.csproj", "{E5CA8108-6AF0-45AD-BA5B-8315FA3E0212}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +33,21 @@ Global
 		{BAF736AB-218D-4E97-A219-4171565DAFB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAF736AB-218D-4E97-A219-4171565DAFB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAF736AB-218D-4E97-A219-4171565DAFB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F3FD68C-E932-436A-825C-7CBD54209AB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3FD68C-E932-436A-825C-7CBD54209AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3FD68C-E932-436A-825C-7CBD54209AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3FD68C-E932-436A-825C-7CBD54209AB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5CA8108-6AF0-45AD-BA5B-8315FA3E0212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5CA8108-6AF0-45AD-BA5B-8315FA3E0212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5CA8108-6AF0-45AD-BA5B-8315FA3E0212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5CA8108-6AF0-45AD-BA5B-8315FA3E0212}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7F3FD68C-E932-436A-825C-7CBD54209AB3} = {A3D1A3E2-B63A-4BC0-96A9-865D8F413474}
+		{E5CA8108-6AF0-45AD-BA5B-8315FA3E0212} = {A3D1A3E2-B63A-4BC0-96A9-865D8F413474}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B862F8D9-6CC6-4B38-A3C3-3AD0A50D344C}
