@@ -5,22 +5,18 @@ using System.Collections.Generic;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace SocialMedia.Infrastructure.Data
+namespace SocialMedia.Core.Entities
 {
-    public partial class Publicacion
+    public partial class Comentario
     {
-        public Publicacion()
-        {
-            Comentario = new HashSet<Comentario>();
-        }
-
+        public int IdComentario { get; set; }
         public int IdPublicacion { get; set; }
         public int IdUsuario { get; set; }
-        public DateTime Fecha { get; set; }
         public string Descripcion { get; set; }
-        public string Imagen { get; set; }
+        public DateTime Fecha { get; set; }
+        public bool Activo { get; set; }
 
+        public virtual Publicacion IdPublicacionNavigation { get; set; }
         public virtual Usuario IdUsuarioNavigation { get; set; }
-        public virtual ICollection<Comentario> Comentario { get; set; }
     }
 }
