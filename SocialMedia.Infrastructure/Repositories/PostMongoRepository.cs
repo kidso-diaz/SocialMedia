@@ -9,20 +9,9 @@ namespace SocialMedia.Infrastructure.Repositories
 {
     public class PostMongoRepository : IPostRepository
     {
-        public async Task<IEnumerable<Post>> GetPosts()
+        public Task<IEnumerable<Publicacion>> GetPosts()
         {
-            var posts = Enumerable.Range(1, 10).Select(x => new Post()
-            {
-                PostId = x,
-                Description = $"Description Mongo {x}",
-                PostDate = DateTime.Now,
-                Image = $"https://misapis.com/{x}",
-                UserId = x * 2
-            });
-
-            await Task.Delay(10);
-
-            return posts;
+            throw new NotImplementedException();
         }
     }
 }
