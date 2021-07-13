@@ -26,17 +26,43 @@ namespace SocialMedia.Infrastructure.Data
         {
             modelBuilder.Entity<Comment>(entity =>
             {
-                entity.HasKey(e => e.CommentId);
+                #region Table
+                entity.ToTable("Comentario");
+                #endregion
 
-                entity.Property(e => e.CommentId).ValueGeneratedNever();
+                #region PrimaryKey
+                entity.HasKey(e => e.CommentId);
+                #endregion
+
+                #region Fields
+                entity.Property(e => e.CommentId)
+                    .HasColumnName("IdComentario")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.PostId)
+                    .HasColumnName("IdPublicacion")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.UserId)
+                    .HasColumnName("IdUsuario")
+                    .ValueGeneratedNever();
 
                 entity.Property(e => e.Description)
+                    .HasColumnName("Descripcion")
                     .IsRequired()
                     .HasMaxLength(500)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Date).HasColumnType("datetime");
+                entity.Property(e => e.Date) 
+                    .HasColumnName("Fecha")
+                    .HasColumnType("datetime");
 
+                entity.Property(e => e.Active)
+                    .HasColumnName("Activo")
+                    .ValueGeneratedNever();
+                #endregion
+
+                #region Constraints
                 entity.HasOne(d => d.Post)
                     .WithMany(p => p.Comments)
                     .HasForeignKey(d => d.PostId)
@@ -48,6 +74,7 @@ namespace SocialMedia.Infrastructure.Data
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Comentario_Usuario");
+                #endregion
             });
 
             modelBuilder.Entity<Post>(entity =>
