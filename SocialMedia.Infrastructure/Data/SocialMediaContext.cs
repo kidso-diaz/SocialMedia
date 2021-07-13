@@ -121,28 +121,48 @@ namespace SocialMedia.Infrastructure.Data
 
             modelBuilder.Entity<User>(entity =>
             {
+                #region Table
+                entity.ToTable("Usuario");
+                #endregion
+
+                #region PrimaryKey
                 entity.HasKey(e => e.UserId);
+                #endregion
+
+                #region Fields
+                entity.Property(e => e.UserId)
+                    .HasColumnName("IdUsuario")
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FirstName)
+                    .HasColumnName("Nombres")
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.LastName)
+                    .HasColumnName("Apellidos")
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Email)
+                    .HasColumnName("Email")
                     .IsRequired()
                     .HasMaxLength(30)
                     .IsUnicode(false);
 
-                entity.Property(e => e.BirthDate).HasColumnType("date");
-
-                entity.Property(e => e.FirstName)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.DateOfBirth)
+                    .HasColumnName("FechaNacimiento")
+                    .HasColumnType("date");
 
                 entity.Property(e => e.Telephone)
+                    .HasColumnName("Telefono")
                     .HasMaxLength(10)
                     .IsUnicode(false);
+                #endregion
             });
 
             OnModelCreatingPartial(modelBuilder);
