@@ -79,24 +79,44 @@ namespace SocialMedia.Infrastructure.Data
 
             modelBuilder.Entity<Post>(entity =>
             {
+                #region Table
+                entity.ToTable("Publicacion");
+                #endregion
+
+                #region PrimaryKey
                 entity.HasKey(e => e.PostId);
+                #endregion
+
+                #region Fields
+                entity.Property(e => e.PostId)
+                    .HasColumnName("IdPublicacion");
+
+                entity.Property(e => e.UserId)
+                    .HasColumnName("IdUsuario");
+
+                entity.Property(e => e.PostDate)
+                    .HasColumnName("Fecha")
+                    .HasColumnType("datetime");
 
                 entity.Property(e => e.Description)
+                    .HasColumnName("Descripcion")
                     .IsRequired()
                     .HasMaxLength(1000)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PostDate).HasColumnType("datetime");
-
                 entity.Property(e => e.Image)
+                    .HasColumnName("Imagen")
                     .HasMaxLength(500)
                     .IsUnicode(false);
+                #endregion
 
+                #region Constraints
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Posts)
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Publicacion_Usuario");
+                #endregion
             });
 
             modelBuilder.Entity<User>(entity =>
