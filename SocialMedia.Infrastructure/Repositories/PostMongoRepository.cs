@@ -12,5 +12,10 @@ namespace SocialMedia.Infrastructure.Repositories
         {
             throw new NotImplementedException();
         }
+
+        Task<Post> IPostRepository.GetPost(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
