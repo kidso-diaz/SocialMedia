@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using SocialMedia.Api.Controllers.Base;
 using SocialMedia.Core.DTOs;
 using SocialMedia.Core.Entities;
 using SocialMedia.Core.Interfaces;
@@ -10,15 +11,10 @@ namespace SocialMedia.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PostController : ControllerBase
+    public class PostController : ControllingBase
     {
-        private readonly IPostRepository _postRepository;
-        private readonly IMapper _mapper;
-
-        public PostController(IPostRepository postRepository, IMapper mapper)
+        public PostController(IPostRepository postRepository, IMapper mapper) : base(postRepository, mapper)
         {
-            _postRepository = postRepository;
-            _mapper = mapper;
         }
 
         [HttpGet]
