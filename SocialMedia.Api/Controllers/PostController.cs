@@ -33,6 +33,7 @@ namespace SocialMedia.Api.Controllers
             return Ok(postDto);
         }
 
+        [HttpPost]
         public async Task<IActionResult> Post(PostDto postDto)
         {
             var post = _mapper.Map<Post>(postDto);
