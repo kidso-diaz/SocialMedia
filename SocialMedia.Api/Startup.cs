@@ -34,7 +34,7 @@ namespace SocialMedia.Api
                 })
                 .ConfigureApiBehaviorOptions(options =>
                 {
-                    options.SuppressModelStateInvalidFilter = true;
+                    options.SuppressModelStateInvalidFilter = false;
                 });
 
             services.AddDbContext<SocialMediaContext>(options =>
