@@ -7,7 +7,7 @@ using System;
 
 namespace SocialMedia.Core.Entities
 {
-    public partial class Comment : BaseEntity
+    public partial class Comment : EntityBase
     {
         public int PostId { get; set; }
         public int UserId { get; set; }

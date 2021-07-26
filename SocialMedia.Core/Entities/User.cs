@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace SocialMedia.Core.Entities
 {
-    public partial class User : BaseEntity
+    public partial class User : EntityBase
     {
         public User()
         {
