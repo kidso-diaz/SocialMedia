@@ -32,6 +32,7 @@ namespace SocialMedia.Core.Services
         {
             var user = await _userRepository.GetUser(post.UserId);
             if (user == null) throw new Exception("User doesn't exist");
+            if (post.Description.ToLower().Contains("sexo")) throw new Exception("Content not allowed");
             await _postRepository.InsertPost(post);
         }
 
