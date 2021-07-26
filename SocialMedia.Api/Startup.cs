@@ -44,6 +44,7 @@ namespace SocialMedia.Api
 
             services.AddTransient<IPostRepository, PostRepository>();
             services.AddTransient<IPostService, PostService>();
+            services.AddTransient<IUserRepository, UserRepository>();
 
             services
                 .AddMvc(options =>
