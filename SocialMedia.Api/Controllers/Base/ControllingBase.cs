@@ -6,12 +6,12 @@ namespace SocialMedia.Api.Controllers.Base
 {
     public abstract class ControllingBase : ControllerBase
     {
-        protected readonly IPostRepository _postRepository;
+        protected readonly IPostService _postService;
         protected readonly IMapper _mapper;
 
-        public ControllingBase(IPostRepository postRepository, IMapper mapper)
+        public ControllingBase(IPostService postService, IMapper mapper)
         {
-            _postRepository = postRepository;
+            _postService = postService;
             _mapper = mapper;
         }
     }
