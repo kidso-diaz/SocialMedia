@@ -41,7 +41,7 @@ namespace SocialMedia.Api.Controllers
         {
             var post = _mapper.Map<Post>(postDto);
             await _postService.InsertPost(post);
-            
+
             postDto = _mapper.Map<PostDto>(post);
             var response = new ApiResponse<PostDto>(postDto);
             return Ok(response);

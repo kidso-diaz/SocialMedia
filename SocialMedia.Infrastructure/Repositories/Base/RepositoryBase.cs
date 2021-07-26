@@ -1,7 +1,4 @@
 ﻿using SocialMedia.Infrastructure.Data;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SocialMedia.Infrastructure.Repositories.Base
 {
