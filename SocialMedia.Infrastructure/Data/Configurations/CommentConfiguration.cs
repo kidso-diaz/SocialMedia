@@ -13,11 +13,11 @@ namespace SocialMedia.Infrastructure.Data.Configurations
             #endregion
 
             #region PrimaryKey
-            builder.HasKey(e => e.CommentId);
+            builder.HasKey(e => e.Id);
             #endregion
 
             #region Fields
-            builder.Property(e => e.CommentId)
+            builder.Property(e => e.Id)
                 .HasColumnName("IdComentario")
                 .ValueGeneratedNever();
 

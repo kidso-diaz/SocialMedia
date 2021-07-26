@@ -13,11 +13,11 @@ namespace SocialMedia.Infrastructure.Data.Configurations
             #endregion
 
             #region PrimaryKey
-            builder.HasKey(e => e.PostId);
+            builder.HasKey(e => e.Id);
             #endregion
 
             #region Fields
-            builder.Property(e => e.PostId)
+            builder.Property(e => e.Id)
                 .HasColumnName("IdPublicacion");
 
             builder.Property(e => e.UserId)

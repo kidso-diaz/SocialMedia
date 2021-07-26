@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SocialMedia.Core.Entities.Base;
+using System;
 using System.Collections.Generic;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
@@ -7,14 +8,13 @@ using System.Collections.Generic;
 
 namespace SocialMedia.Core.Entities
 {
-    public partial class Post
+    public partial class Post : BaseEntity
     {
         public Post()
         {
             Comments = new HashSet<Comment>();
         }
 
-        public int PostId { get; set; }
         public int UserId { get; set; }
         public DateTime PostDate { get; set; }
         public string Description { get; set; }
