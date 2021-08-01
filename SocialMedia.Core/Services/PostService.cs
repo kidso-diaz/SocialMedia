@@ -1,4 +1,5 @@
 ﻿using SocialMedia.Core.Entities;
+using SocialMedia.Core.Exceptions;
 using SocialMedia.Core.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace SocialMedia.Core.Services
         {
             /// Validación existencia Usuario
             var user = await _unitOfWork.UserRepository.GetById(post.UserId);
-            if (user == null) throw new Exception("User doesn't exist");
+            if (user == null) throw new BusinessException("User doesn't exist");
             
             /// Validación 
             var userPost = await _unitOfWork.PostRepository.GetPostsByUser(post.UserId);
@@ -39,11 +40,11 @@ namespace SocialMedia.Core.Services
                 var lastPost = userPost.OrderByDescending(x => x.PostDate).FirstOrDefault(); // Obtenemos el último post
                 if ((DateTime.Now - lastPost.PostDate).TotalDays < 7)
                 {
-                    throw new Exception("You are not able to post now");
+                    throw new BusinessException("You are not able to post now");
                 }
             }
 
-            if (post.Description.ToLower().Contains("sexo")) throw new Exception("Content not allowed");
+            if (post.Description.ToLower().Contains("sexo")) throw new BusinessException("Content not allowed");
             
             await _unitOfWork.PostRepository.Add(post);
             await _unitOfWork.SaveChangesAsync();

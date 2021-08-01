@@ -28,12 +28,13 @@ namespace SocialMedia.Api
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddControllers()
-                .AddNewtonsoftJson(options =>
+            services.AddControllers(options =>
+                {
+                    options.Filters.Add<GlobalExceptionFilter>();
+                }).AddNewtonsoftJson(options =>
                 {
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-                })
-                .ConfigureApiBehaviorOptions(options =>
+                }).ConfigureApiBehaviorOptions(options =>
                 {
                     options.SuppressModelStateInvalidFilter = false;
                 });
