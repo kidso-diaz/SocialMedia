@@ -11,7 +11,7 @@ namespace SocialMedia.Infrastructure.Repositories
     public class RepositoryBase<T> : IRepository<T> where T : EntityBase
     {
         private readonly SocialMediaContext _context;
-        private readonly DbSet<T> _entities;
+        protected readonly DbSet<T> _entities;
 
         public RepositoryBase(SocialMediaContext context)
         {

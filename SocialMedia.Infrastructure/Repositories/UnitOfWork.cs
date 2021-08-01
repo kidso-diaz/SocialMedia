@@ -8,7 +8,7 @@ namespace SocialMedia.Infrastructure.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         private readonly SocialMediaContext _context;
-        private readonly IRepository<Post> _postRepository = null;
+        private readonly IPostRepository _postRepository = null;
         private readonly IRepository<User> _userRepository = null;
         private readonly IRepository<Comment> _commentRepository = null;
 
@@ -17,7 +17,7 @@ namespace SocialMedia.Infrastructure.Repositories
             _context = context;
         }
 
-        public IRepository<Post> PostRepository => _postRepository ?? new RepositoryBase<Post>(_context);
+        public IPostRepository PostRepository => _postRepository ?? new PostRepository(_context);
 
         public IRepository<User> UserRepository => _userRepository ?? new RepositoryBase<User>(_context);
 
