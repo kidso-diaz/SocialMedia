@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SocialMedia.Core.QueryFilters.Base
+﻿namespace SocialMedia.Core.QueryFilters.Base
 {
     public abstract class FilterBase
     {

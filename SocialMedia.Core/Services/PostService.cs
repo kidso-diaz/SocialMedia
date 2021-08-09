@@ -5,7 +5,6 @@ using SocialMedia.Core.Exceptions;
 using SocialMedia.Core.Interfaces;
 using SocialMedia.Core.QueryFilters;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -45,7 +44,7 @@ namespace SocialMedia.Core.Services
             /// Validación existencia Usuario
             var user = await _unitOfWork.UserRepository.GetById(post.UserId);
             if (user == null) throw new BusinessException("User doesn't exist");
-            
+
             /// Validación 
             var userPost = await _unitOfWork.PostRepository.GetPostsByUser(post.UserId);
             if (userPost != null && userPost.Count() < 10)
@@ -58,7 +57,7 @@ namespace SocialMedia.Core.Services
             }
 
             if (post.Description.ToLower().Contains("sexo")) throw new BusinessException("Content not allowed");
-            
+
             await _unitOfWork.PostRepository.Add(post);
             await _unitOfWork.SaveChangesAsync();
         }

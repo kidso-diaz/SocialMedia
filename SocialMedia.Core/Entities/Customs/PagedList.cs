@@ -1,9 +1,7 @@
 ﻿using SocialMedia.Core.Entities.Base;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SocialMedia.Core.Entities.Customs
 {

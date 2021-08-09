@@ -7,7 +7,6 @@ using SocialMedia.Core.DTOs;
 using SocialMedia.Core.Entities;
 using SocialMedia.Core.Interfaces;
 using SocialMedia.Core.QueryFilters;
-using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;

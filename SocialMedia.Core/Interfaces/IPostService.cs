@@ -1,8 +1,6 @@
 ﻿using SocialMedia.Core.Entities;
 using SocialMedia.Core.Entities.Base;
-using SocialMedia.Core.Entities.Customs;
 using SocialMedia.Core.QueryFilters;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SocialMedia.Core.Interfaces
