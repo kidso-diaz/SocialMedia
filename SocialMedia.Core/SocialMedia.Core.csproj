@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Entities\Customs\" />
     <Folder Include="Enumerations\" />
   </ItemGroup>
 

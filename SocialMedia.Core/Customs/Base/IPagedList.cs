@@ -1,4 +1,4 @@
-﻿namespace SocialMedia.Core.Entities.Base
+﻿namespace SocialMedia.Core.Customs.Base
 {
     public interface IPagedList<T>
     {

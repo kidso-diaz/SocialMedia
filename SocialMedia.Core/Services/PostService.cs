@@ -1,6 +1,6 @@
-﻿using SocialMedia.Core.Entities;
-using SocialMedia.Core.Entities.Base;
-using SocialMedia.Core.Entities.Customs;
+﻿using SocialMedia.Core.Customs;
+using SocialMedia.Core.Customs.Base;
+using SocialMedia.Core.Entities;
 using SocialMedia.Core.Exceptions;
 using SocialMedia.Core.Interfaces;
 using SocialMedia.Core.QueryFilters;

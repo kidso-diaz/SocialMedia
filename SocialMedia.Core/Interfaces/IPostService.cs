@@ -1,5 +1,5 @@
-﻿using SocialMedia.Core.Entities;
-using SocialMedia.Core.Entities.Base;
+﻿using SocialMedia.Core.Customs.Base;
+using SocialMedia.Core.Entities;
 using SocialMedia.Core.QueryFilters;
 using System.Threading.Tasks;
 

@@ -1,9 +1,9 @@
-﻿using SocialMedia.Core.Entities.Base;
+﻿using SocialMedia.Core.Customs.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SocialMedia.Core.Entities.Customs
+namespace SocialMedia.Core.Customs
 {
     public class PagedList<T> : List<T>, IPagedList<T>
     {
