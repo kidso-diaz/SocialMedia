@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SocialMedia.Core.Customs
 {
-    public class PagedList<T> : List<T>, IPagedList<T>
+    public class PagedList<T> : List<T>, IPagedList
     {
         #region Data
         public int Currentpage { get; set; }
@@ -19,18 +19,6 @@ namespace SocialMedia.Core.Customs
         public bool HasNextPage => Currentpage < TotalPages;
         public int? NextPageNumber => HasNextPage ? Currentpage + 1 : (int?)null;
         public int? PreviousPageNumber => HasPreviousPage ? Currentpage - 1 : (int?)null;
-        #endregion
-
-        #region Meta
-        public object GetStatus => new
-        {
-            TotalRows,
-            PageSize,
-            Currentpage,
-            TotalPages,
-            HasNextPage,
-            HasPreviousPage
-        };
         #endregion
 
         #region Constructor

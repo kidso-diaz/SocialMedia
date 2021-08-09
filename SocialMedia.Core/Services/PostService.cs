@@ -19,7 +19,7 @@ namespace SocialMedia.Core.Services
             _unitOfWork = unitOfWork;
         }
 
-        public IPagedList<Post> GetPosts(PostQueryFilter filters)
+        public PagedList<Post> GetPosts(PostQueryFilter filters)
         {
             var posts = _unitOfWork.PostRepository.GetAll();
 

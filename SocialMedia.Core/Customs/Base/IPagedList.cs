@@ -1,6 +1,6 @@
 ﻿namespace SocialMedia.Core.Customs.Base
 {
-    public interface IPagedList<T>
+    public interface IPagedList
     {
         #region Data
         int Currentpage { get; set; }
@@ -14,10 +14,6 @@
         bool HasNextPage { get; }
         int? NextPageNumber { get; }
         int? PreviousPageNumber { get; }
-        #endregion
-
-        #region Meta
-        object GetStatus { get; }
         #endregion
     }
 }
