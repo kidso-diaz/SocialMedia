@@ -1,11 +1,13 @@
-﻿using System;
+﻿using SocialMedia.Core.Entities.Base;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace SocialMedia.Core.Entities.Customs
 {
-    public class PagedList<T> : List<T>
+    public class PagedList<T> : List<T>, IPagedList<T>
     {
         #region Data
         public int Currentpage { get; set; }
@@ -19,6 +21,18 @@ namespace SocialMedia.Core.Entities.Customs
         public bool HasNextPage => Currentpage < TotalPages;
         public int? NextPageNumber => HasNextPage ? Currentpage + 1 : (int?)null;
         public int? PreviousPageNumber => HasPreviousPage ? Currentpage - 1 : (int?)null;
+        #endregion
+
+        #region Meta
+        public object GetStatus => new
+        {
+            TotalRows,
+            PageSize,
+            Currentpage,
+            TotalPages,
+            HasNextPage,
+            HasPreviousPage
+        };
         #endregion
 
         #region Constructor

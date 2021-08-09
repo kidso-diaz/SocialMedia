@@ -1,4 +1,5 @@
 ﻿using SocialMedia.Core.Entities;
+using SocialMedia.Core.Entities.Base;
 using SocialMedia.Core.Entities.Customs;
 using SocialMedia.Core.Exceptions;
 using SocialMedia.Core.Interfaces;
@@ -19,7 +20,7 @@ namespace SocialMedia.Core.Services
             _unitOfWork = unitOfWork;
         }
 
-        public PagedList<Post> GetPosts(PostQueryFilter filters)
+        public IPagedList<Post> GetPosts(PostQueryFilter filters)
         {
             var posts = _unitOfWork.PostRepository.GetAll();
 

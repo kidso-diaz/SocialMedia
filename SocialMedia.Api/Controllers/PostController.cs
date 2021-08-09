@@ -31,16 +31,7 @@ namespace SocialMedia.Api.Controllers
             var postsDto = _mapper.Map<IEnumerable<PostDto>>(posts);
             var response = new ApiResponse<IEnumerable<PostDto>>(postsDto);
 
-            var metaData = new
-            {
-                posts.TotalRows,
-                posts.PageSize,
-                posts.Currentpage,
-                posts.TotalPages,
-                posts.HasNextPage,
-                posts.HasPreviousPage
-            };
-            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metaData));
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(posts.GetStatus));
             return Ok(response);
         }
 
