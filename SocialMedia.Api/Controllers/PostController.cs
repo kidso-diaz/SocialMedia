@@ -29,7 +29,6 @@ namespace SocialMedia.Api.Controllers
         {
             var posts = _postService.GetPosts(filters);
             var postsDto = _mapper.Map<IEnumerable<PostDto>>(posts);
-            var response = new ApiResponse<IEnumerable<PostDto>>(postsDto);
 
             var metaData = new MetaData()
             {
@@ -37,6 +36,10 @@ namespace SocialMedia.Api.Controllers
                 TotalPages = posts.TotalPages,
                 PageSize = posts.PageSize,
                 TotalRows = posts.TotalRows
+            };
+            var response = new ApiResponse<IEnumerable<PostDto>>(postsDto)
+            {
+                Meta = metaData
             };
 
             Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metaData));
